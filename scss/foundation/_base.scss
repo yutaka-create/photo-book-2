@@ -1,0 +1,54 @@
+@use "./vars" as v;
+@use "./mixin" as m;
+
+// --------------------------------------------------------
+// 全体設定
+// --------------------------------------------------------
+html {
+    font-size: 100%; // 16px基準
+    // スムーズスクロール（ページトップ戻るボタン用）
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: v.$font-family-main;
+    font-size: v.$fz-base;
+    font-weight: v.$fw-w3;
+    color: v.$c-text;
+    line-height: v.$lh-base;
+}
+
+
+
+// --------------------------------------------------------
+// 画像・リンク・リストの基本設定
+// --------------------------------------------------------
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    @include m.hover {
+        opacity: 0.2;
+    }
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+// --------------------------------------------------------
+// ユーティリティ（JavaScript制御用など）
+// --------------------------------------------------------
+.is-hidden {
+    display: none !important;
+}

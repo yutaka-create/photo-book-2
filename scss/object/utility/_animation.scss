@@ -1,0 +1,61 @@
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+// --------------------------------------------------------
+// ① タイトル出現アニメーション（clip-path）用
+// --------------------------------------------------------
+.u-js-reveal-left {
+    opacity: 0;
+    // 左端から右端へ表示させるための初期状態（左側に隠れている状態）
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.0s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.0s;
+
+    // JSでこのクラスがついたら表示される
+    &.is-animated {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+// --------------------------------------------------------
+// ② ふわっと下から出現（高さの20%分）
+// --------------------------------------------------------
+.u-js-fade-up {
+    opacity: 0;
+    // 要素自身の高さの20%分、下に配置
+    transform: translateY(50px);
+    transition: transform 1.0s ease-out, opacity 1.0s;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// --------------------------------------------------
+// ③ 左からスッと出現（奇数用）
+// --------------------------------------------------
+.u-js-fade-left {
+    opacity: 0;
+    transform: translateX(-50px); // 本来の位置より左に50pxずらす
+    transition: transform 0.8s ease-out, opacity 0.8s;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateX(0); // 本来の位置に戻る
+    }
+}
+
+// --------------------------------------------------
+// ④ 右からスッと出現（偶数用）
+// --------------------------------------------------
+.u-js-fade-right {
+    opacity: 0;
+    transform: translateX(50px); // 本来の位置より右に50pxずらす
+    transition: transform 0.8s ease-out, opacity 0.8s;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateX(0); // 本来の位置に戻る
+    }
+}

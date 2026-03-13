@@ -1,0 +1,20 @@
+@use "../foundation/mixin" as m;
+
+.l-header {
+    padding: 60px 0 15px 0;
+
+    &__container {
+        @include m.mq-sp {
+            padding: 0 10px;
+        }
+    }
+
+    &__logo {
+        width: 180px;
+        line-height: 0;
+    }
+
+    &__link {
+        display: block;
+    }
+}

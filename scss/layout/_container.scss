@@ -1,0 +1,26 @@
+@use "../foundation/vars" as v;
+@use "../foundation/mixin" as m;
+
+// --------------------------------------------------------
+// Container Layout
+// --------------------------------------------------------
+// A. 基本コンテナ（1000px幅 ＋ スマホ用ガード余白あり）
+.l-container {
+    @include m.container-base;
+    max-width: v.$content-width-main;
+
+    // 基本コンテナには、コンテンツが画面端に張り付かないよう安全策のpaddingを持つ
+    @include m.mq-sp {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    // B. モディファイア（800px幅 ＋ paddingなしの純粋なシェル）
+    &--inner {
+        @include m.container-base;
+        max-width: v.$content-width-inner;
+
+        // 豊さんの指定通り、ここには左右paddingを記述しません
+        // 内側の要素（.p-detail__innerなど）でpaddingを管理する設計です
+    }
+}

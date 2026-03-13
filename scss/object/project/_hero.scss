@@ -1,0 +1,20 @@
+@use "../../foundation/mixin" as m;
+
+.p-hero {
+    margin-bottom: 60px;
+
+    &__container {
+        overflow: hidden;
+
+        @include m.mq-sp {
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 1000 / 400;
+            object-fit: cover;
+        }
+    }
+
+}

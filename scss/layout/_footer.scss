@@ -1,0 +1,10 @@
+@use "../foundation/vars" as v;
+
+.l-footer {
+    padding: 15px 0;
+    text-align: center;
+
+    &__copyright {
+        font-size: v.$fz-ss;
+    }
+}

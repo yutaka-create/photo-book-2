@@ -1,0 +1,24 @@
+// foundation/_mixin.scss
+@use "vars" as v;
+
+// スマホ（SP）用のメディアクエリを呼び出す関数
+@mixin mq-sp {
+  @media screen and (max-width: v.$bp-sp) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// コンテナとしての最小限の振る舞い（中央寄せと横幅いっぱい）
+@mixin container-base {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}

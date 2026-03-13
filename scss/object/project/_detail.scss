@@ -1,0 +1,67 @@
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.p-detail {
+    margin-bottom: 60px;
+
+    &__inner {
+        padding: 60px;
+        background-color: v.$c-bg-light;
+
+        @include m.mq-sp {
+            padding: 40px 20px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+
+        @include m.mq-sp {
+            flex-direction: column;
+        }
+    }
+
+    &__meta {
+        flex-basis: 238px;
+        flex-shrink: 0;
+        border-right: 1px solid v.$c-text;
+
+        @include m.mq-sp {
+            flex-basis: auto;
+            flex-shrink: 1;
+            width: 100%;
+            padding-bottom: 40px;
+            border: none;
+            border-bottom: 1px solid v.$c-text;
+        }
+    }
+
+    &__meta-item {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__body {
+        flex: 1;
+        padding-left: 40px;
+
+        @include m.mq-sp {
+            flex: 0 1 auto;
+            padding: 0;
+            padding-top: 40px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 20px;
+    }
+
+}

@@ -1,0 +1,36 @@
+@use "../../foundation/vars" as v;
+
+.c-page-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: v.$c-text;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 10px;
+        background-color: v.$c-white;
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+
+        &:hover {
+            opacity: 0.3;
+        }
+    }
+}

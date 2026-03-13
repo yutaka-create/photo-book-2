@@ -1,0 +1,22 @@
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.c-card {
+    &__article {
+        overflow: hidden;
+
+        @include m.mq-sp {
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 392 / 261;
+            object-fit: cover;
+
+            @include m.mq-sp {
+                max-width: 600px;
+            }
+        }
+    }
+}
