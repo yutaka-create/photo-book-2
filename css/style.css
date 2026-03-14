@@ -403,6 +403,7 @@ body {
   font-weight: 300;
   color: #333;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 img {
@@ -454,6 +455,7 @@ ol {
 
 .l-header {
   padding: 60px 0 15px 0;
+  margin-bottom: 1000px;
 }
 @media screen and (max-width: 1024px) {
   .l-header__container {
@@ -480,6 +482,8 @@ ol {
   font-size: 1.125rem;
   font-weight: 600;
   text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .c-btn {
@@ -516,7 +520,7 @@ ol {
   opacity: 1;
   visibility: visible;
 }
-.c-page-top.is-show:hover {
+.c-page-top.is-show:active {
   opacity: 0.3;
 }
 
@@ -541,7 +545,7 @@ ol {
 }
 
 .p-hero {
-  margin-bottom: 60px;
+  margin-bottom: 1000px;
 }
 .p-hero__container {
   overflow: hidden;
@@ -559,7 +563,7 @@ ol {
 }
 
 .p-index {
-  margin-bottom: 60px;
+  margin-bottom: 1000px;
 }
 .p-index__inner {
   padding: 60px;
@@ -604,7 +608,7 @@ ol {
 }
 
 .p-gallery {
-  margin-bottom: 60px;
+  margin-bottom: 1000px;
 }
 .p-gallery__list {
   display: grid;
@@ -619,7 +623,7 @@ ol {
 }
 
 .p-detail {
-  margin-bottom: 60px;
+  margin-bottom: 1000px;
 }
 .p-detail__inner {
   padding: 60px;
@@ -678,47 +682,61 @@ ol {
   margin-bottom: 20px;
 }
 
-.u-js-reveal-left {
+.u-reveal-left {
   opacity: 0;
   -webkit-clip-path: inset(0 100% 0 0);
           clip-path: inset(0 100% 0 0);
+  will-change: opacity, clip-path;
   transition: opacity 1s, -webkit-clip-path 1s cubic-bezier(0.25, 1, 0.5, 1);
   transition: clip-path 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s;
   transition: clip-path 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s, -webkit-clip-path 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.u-js-reveal-left.is-animated {
+.u-reveal-left.is-animated {
   opacity: 1;
   -webkit-clip-path: inset(0 0 0 0);
           clip-path: inset(0 0 0 0);
 }
 
-.u-js-fade-up {
+.u-fade-up {
   opacity: 0;
   transform: translateY(50px);
   transition: transform 1s ease-out, opacity 1s;
 }
-.u-js-fade-up.is-animated {
+.u-fade-up.is-animated {
   opacity: 1;
   transform: translateY(0);
 }
 
-.u-js-fade-left {
+.u-fade-left {
   opacity: 0;
   transform: translateX(-50px);
   transition: transform 0.8s ease-out, opacity 0.8s;
 }
-.u-js-fade-left.is-animated {
+.u-fade-left.is-animated {
   opacity: 1;
   transform: translateX(0);
 }
 
-.u-js-fade-right {
+.u-fade-right {
   opacity: 0;
   transform: translateX(50px);
   transition: transform 0.8s ease-out, opacity 0.8s;
 }
-.u-js-fade-right.is-animated {
+.u-fade-right.is-animated {
   opacity: 1;
   transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .u-js-reveal-left,
+.u-js-fade-up,
+.u-js-fade-left,
+.u-js-fade-right {
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-clip-path: inset(0 0 0 0) !important;
+            clip-path: inset(0 0 0 0) !important;
+    transition: none !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

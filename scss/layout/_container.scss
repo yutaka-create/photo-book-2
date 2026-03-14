@@ -19,8 +19,5 @@
     &--inner {
         @include m.container-base;
         max-width: v.$content-width-inner;
-
-        // 豊さんの指定通り、ここには左右paddingを記述しません
-        // 内側の要素（.p-detail__innerなど）でpaddingを管理する設計です
     }
 }

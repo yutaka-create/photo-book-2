@@ -1,10 +1,10 @@
 // 監視対象の要素が画面内に入ったら .is-animated を付与する
 function initIntersection() {
-  const targets = document.querySelectorAll('.js-fade-in-left, .js-fade-up, .js-fade-left, .js-fade-right');
+  const targets = document.querySelectorAll('.js-scroll-trigger');
 
   const options = {
     root: null, // ビューポートを基準にする
-    rootMargin: '0px 0px -5% 0px', 
+    rootMargin: '0px 0px -20% 0px', 
     threshold: 0 // 少しでも重なったら実行
   };
 
